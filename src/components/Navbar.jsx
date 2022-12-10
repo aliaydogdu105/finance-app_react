@@ -1,9 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className=" h-20 bg-gray-200 border-b border-green-200 flex justify-between items-center px-6">
-      <a href="/">
+    <div className=" h-20 bg-gray-200 border-b border-green-200 flex justify-between items-center px-6 fixed w-full">
+      <NavLink to="/">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -16,7 +17,7 @@ const Navbar = () => {
             clipRule="evenodd"
           />
         </svg>
-      </a>
+      </NavLink>
       <h1 className=" text-4xl font-bold text-sky-900">
         Finance Plus
         <span>&#8314;</span>

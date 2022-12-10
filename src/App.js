@@ -1,14 +1,10 @@
 import "./App.css";
-import Aside from "./components/Aside";
-import Navbar from "./components/Navbar";
-import ForeignExchange from "./pages/ForeignExchange";
+import AppRouter from "./router/AppRouter";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <ForeignExchange />
-      <Aside />
+      <AppRouter />
     </div>
   );
 }
