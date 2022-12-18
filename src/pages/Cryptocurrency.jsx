@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowDownIcon, EyeIcon } from "@heroicons/react/24/solid";
+import axios from "axios";
+import { Coins } from "../config/api";
 
 const Cryptocurrency = () => {
+  const [coinsData, setCoinsData] = useState("");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios.get(Coins);
+      setCoinsData(result.name);
+      console.log(coinsData);
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className="flex items-center flex-col w-3/4 fixed top-28 right-12">
       <h1 className=" mb-6 font-bold text-2xl">Cryptocurrency</h1>
@@ -37,7 +50,7 @@ const Cryptocurrency = () => {
           </thead>
           <tbody>
             <tr className=" border-t">
-              <td className="p-2">text1.1</td>
+              <td className="p-2">{}</td>
               <td className="py-2 border-l">text1.2</td>
               <td className="p-2 border-l">text1.3</td>
               <td className="p-2 border-l">text1.4</td>
