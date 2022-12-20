@@ -4,19 +4,32 @@ import axios from "axios";
 import { Coins } from "../config/api";
 
 const Cryptocurrency = () => {
-  const [coinsData, setCoinsData] = useState("");
+  const [coinsData, setCoinsData] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get(Coins);
-      setCoinsData(result.name);
-      console.log(coinsData);
+      await axios
+        .get(Coins())
+        .then((res) => {
+          setCoinsData(res.data);
+          console.log(res.data);
+        })
+        .catch((error) => console.log(error));
     };
     fetchData();
   }, []);
 
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const filteredCoins = coinsData.filter((coin) =>
+    coin.name.toLowerCase().includes(search.toLocaleLowerCase())
+  );
+
   return (
-    <div className="flex items-center flex-col w-3/4 fixed top-28 right-12">
+    <div className="flex items-center flex-col w-4/5 fixed top-28 right-12">
       <h1 className=" mb-6 font-bold text-2xl">Cryptocurrency</h1>
       <form className="flex items-center w-2/4 mb-6">
         <div className="relative w-full">
@@ -26,6 +39,7 @@ const Cryptocurrency = () => {
           <input
             type="text"
             id="simple-search"
+            onChange={handleChange}
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full pl-10 p-2.5 "
             placeholder="Search"
             autoComplete="off"
@@ -39,22 +53,50 @@ const Cryptocurrency = () => {
           <EyeIcon className="h-5 w-5 text-green-300" />
         </button>
       </form>
-      <div className="shadow-md shadow-green-300 rounded-md w-4/5">
-        <table className="w-full text-md text-center text-gray-700">
-          <thead className=" capitalize bg-gray-100">
+      <div className="shadow-md shadow-green-300 rounded-md block">
+        <table className="text-md text-center text-gray-700 h-[430px] block overflow-auto">
+          <thead className="capitalize bg-gray-100 e">
             <tr>
-              {["Name", "Price", "24h%", "Market Cap"].map((header) => (
+              {["Name", "Price", "24h%", "7d%", "Market Cap"].map((header) => (
                 <th className="py-4 px-12">{header}</th>
               ))}
             </tr>
           </thead>
           <tbody>
-            <tr className=" border-t">
-              <td className="p-2">{}</td>
-              <td className="py-2 border-l">text1.2</td>
-              <td className="p-2 border-l">text1.3</td>
-              <td className="p-2 border-l">text1.4</td>
-            </tr>
+            {filteredCoins.map((coin) => {
+              return (
+                <tr className=" border-t " key={coin.id}>
+                  <td className="flex items-center gap-8 p-4 ">
+                    <img width={30} src={coin.image} alt={coin.symbol} />
+                    {coin.name}
+                  </td>
+                  <td className="py-2 border-l">
+                    ${coin.current_price.toLocaleString()}
+                  </td>
+                  {coin.price_change_percentage_24h < 0 ? (
+                    <td className="p-2 border-l bg-red-300">
+                      {coin.price_change_percentage_24h.toFixed(2)}%
+                    </td>
+                  ) : (
+                    <td className="p-2 border-l bg-green-400">
+                      {coin.price_change_percentage_24h.toFixed(2)}%
+                    </td>
+                  )}
+                  {coin.price_change_percentage_7d_in_currency < 0 ? (
+                    <td className="p-2 border-l bg-red-300">
+                      {coin.price_change_percentage_7d_in_currency.toFixed(2)}%
+                    </td>
+                  ) : (
+                    <td className="p-2 border-l bg-green-400">
+                      {coin.price_change_percentage_7d_in_currency.toFixed(2)}%
+                    </td>
+                  )}
+                  <td className="p-2 border-l">
+                    ${coin.market_cap.toLocaleString()}
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
