@@ -29,7 +29,7 @@ const Cryptocurrency = () => {
   );
 
   return (
-    <div className="flex items-center flex-col w-4/5 fixed top-28 right-12">
+    <div className="flex items-center flex-col w-4/5 fixed top-28 right-12 bg-gray-50 rounded-xl">
       <h1 className=" mb-6 font-bold text-2xl">Cryptocurrency</h1>
       <form className="flex items-center w-2/4 mb-6">
         <div className="relative w-full">
