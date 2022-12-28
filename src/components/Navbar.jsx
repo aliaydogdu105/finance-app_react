@@ -2,13 +2,13 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className=" h-20 bg-gray-200 border-b border-green-200 flex justify-between items-center px-6 fixed w-full dark:bg-gray-800 dark:text-white dark:border-green-900">
+    <div className=" h-20 z-10 bg-gray-200 border-b border-green-200 flex justify-between items-center px-6 fixed w-full dark:bg-gray-800 dark:text-white dark:border-green-900">
       <NavLink to="/">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="w-14 h-14 text-green-900 dark:text-green-200"
+          className="w-12 sm:w-14 text-green-900 dark:text-green-200"
         >
           <path
             fillRule="evenodd"
@@ -17,7 +17,7 @@ const Navbar = () => {
           />
         </svg>
       </NavLink>
-      <h1 className=" text-4xl font-bold text-sky-900 dark:text-sky-300">
+      <h1 className=" text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-sky-900 dark:text-sky-300">
         Finance Plus
         <span>&#8314;</span>
       </h1>

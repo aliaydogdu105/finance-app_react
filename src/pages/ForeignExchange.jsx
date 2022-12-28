@@ -33,7 +33,7 @@ const ForeignExchange = () => {
   console.log(moneyArr);
 
   return (
-    <div className="flex items-center flex-col w-4/5 fixed top-28 right-12 text-gray-900 bg-gray-50 dark:bg-gray-700 dark:text-gray-50 rounded-xl">
+    <div className="flex items-center flex-col w-5/6 relative sm:fixed top-5 sm:top-28 sm:right-12 text-gray-900 bg-gray-50 dark:bg-gray-700 dark:text-gray-50 rounded-xl">
       <h1 className=" m-3 font-bold text-2xl">Foreign Exchange</h1>
       <form className="flex items-center w-2/4 mb-6 ">
         <div className="relative w-full">
@@ -57,8 +57,8 @@ const ForeignExchange = () => {
           <EyeIcon className="h-5 w-5 text-blue-300" />
         </button>
       </form>
-      <div className="shadow-md mb-5 shadow-blue-300 rounded-md block">
-        <table className="text-md text-center text-gray-700 dark:text-gray-200 h-[430px] block overflow-auto scrollbar-hide">
+      <div className="shadow-md mb-5 shadow-blue-300 rounded-md block ">
+        <table className="text-md text-center text-gray-700 dark:text-gray-200 h-[500px] block overflow-auto scrollbar-hide">
           <thead className="capitalize bg-gray-200 dark:bg-gray-800">
             <tr>
               {["Name", "Price"].map((header) => (
