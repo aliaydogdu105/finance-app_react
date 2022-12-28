@@ -11,6 +11,7 @@ const AppRouter = () => {
       <Navbar />
       <Aside />
       <Routes>
+        <Route path="" element={<ForeignExchange />} />
         <Route path="/foreignexchange" element={<ForeignExchange />} />
         <Route path="/cryptocurrency" element={<Cryptocurrency />} />
       </Routes>

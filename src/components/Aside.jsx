@@ -4,11 +4,10 @@ import { NavLink } from "react-router-dom";
 const Aside = () => {
   return (
     <aside
-      className="w-48 flex flex-col h-screen fixed top-24"
+      className="w-48 flex flex-col h-screen fixed top-28 left-4"
       aria-label="Sidebar"
     >
-      {/* "flex-grow "look after made footer */}
-      <div className="overflow-y-auto flex justify-center items-center py-4  bg-white">
+      <div className="overflow-y-auto flex justify-center items-center py-10 bg-black">
         <ul className="space-y-2 flex flex-col items-center">
           <li>
             <NavLink as={NavLink} to="/foreignexchange">

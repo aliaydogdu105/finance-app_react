@@ -33,9 +33,9 @@ const ForeignExchange = () => {
   console.log(moneyArr);
 
   return (
-    <div className="flex items-center flex-col w-3/4 fixed top-28 right-12 bg-gray-50 rounded-xl">
-      <h1 className=" mb-6 font-bold text-2xl">Foreign Exchange</h1>
-      <form className="flex items-center w-2/4 mb-6">
+    <div className="flex items-center flex-col w-4/5 fixed top-28 right-12 text-gray-900 bg-gray-50 dark:bg-gray-700 dark:text-gray-50 rounded-xl">
+      <h1 className=" m-3 font-bold text-2xl">Foreign Exchange</h1>
+      <form className="flex items-center w-2/4 mb-6 ">
         <div className="relative w-full">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <ArrowDownIcon className="h-6 w-6 text-blue-600" />
@@ -44,7 +44,7 @@ const ForeignExchange = () => {
             type="text"
             id="simple-search"
             onChange={handleChange}
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full pl-10 p-2.5 "
+            className="bg-gray-50 dark:bg-gray-300 border border-gray-300 text-gray-900 text-sm rounded-lg w-full pl-10 p-2.5 "
             placeholder="Search"
             autoComplete="off"
             required
@@ -57,9 +57,9 @@ const ForeignExchange = () => {
           <EyeIcon className="h-5 w-5 text-blue-300" />
         </button>
       </form>
-      <div className="shadow-md shadow-blue-300 rounded-md block">
-        <table className="text-md text-center text-gray-700 h-[430px] block overflow-auto">
-          <thead className="capitalize bg-gray-100 e">
+      <div className="shadow-md mb-5 shadow-blue-300 rounded-md block">
+        <table className="text-md text-center text-gray-700 dark:text-gray-200 h-[430px] block overflow-auto scrollbar-hide">
+          <thead className="capitalize bg-gray-200 dark:bg-gray-800">
             <tr>
               {["Name", "Price"].map((header) => (
                 <th className="py-4 px-12">{header}</th>

@@ -29,8 +29,8 @@ const Cryptocurrency = () => {
   );
 
   return (
-    <div className="flex items-center flex-col w-4/5 fixed top-28 right-12 bg-gray-50 rounded-xl">
-      <h1 className=" mb-6 font-bold text-2xl">Cryptocurrency</h1>
+    <div className="flex items-center flex-col w-4/5 fixed top-28 right-12 bg-gray-50 text-gray-900 dark:bg-gray-700 dark:text-gray-50 rounded-xl">
+      <h1 className=" m-3 font-bold text-2xl">Cryptocurrency</h1>
       <form className="flex items-center w-2/4 mb-6">
         <div className="relative w-full">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -40,7 +40,7 @@ const Cryptocurrency = () => {
             type="text"
             id="simple-search"
             onChange={handleChange}
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full pl-10 p-2.5 "
+            className="bg-gray-50 dark:bg-gray-300 border border-gray-300 text-gray-900 text-sm rounded-lg w-full pl-10 p-2.5 "
             placeholder="Search"
             autoComplete="off"
             required
@@ -53,9 +53,9 @@ const Cryptocurrency = () => {
           <EyeIcon className="h-5 w-5 text-green-300" />
         </button>
       </form>
-      <div className="shadow-md shadow-green-300 rounded-md block">
-        <table className="text-md text-center text-gray-700 h-[430px] block overflow-auto">
-          <thead className="capitalize bg-gray-100 e">
+      <div className="shadow-md mb-5 shadow-green-300 rounded-md block">
+        <table className="text-md text-center text-gray-700 dark:text-gray-200 h-[430px] block overflow-auto scrollbar-hide">
+          <thead className="capitalize bg-gray-200 dark:bg-gray-800">
             <tr>
               {["Name", "Price", "24h%", "7d%", "Market Cap"].map((header) => (
                 <th className="py-4 px-12">{header}</th>
@@ -74,20 +74,20 @@ const Cryptocurrency = () => {
                     ${coin.current_price.toLocaleString()}
                   </td>
                   {coin.price_change_percentage_24h < 0 ? (
-                    <td className="p-2 border-l bg-red-300">
+                    <td className="p-2 border-l bg-red-500 ">
                       {coin.price_change_percentage_24h.toFixed(2)}%
                     </td>
                   ) : (
-                    <td className="p-2 border-l bg-green-400">
+                    <td className="p-2 border-l bg-green-500">
                       {coin.price_change_percentage_24h.toFixed(2)}%
                     </td>
                   )}
                   {coin.price_change_percentage_7d_in_currency < 0 ? (
-                    <td className="p-2 border-l bg-red-300">
+                    <td className="p-2 border-l bg-red-500">
                       {coin.price_change_percentage_7d_in_currency.toFixed(2)}%
                     </td>
                   ) : (
-                    <td className="p-2 border-l bg-green-400">
+                    <td className="p-2 border-l bg-green-500">
                       {coin.price_change_percentage_7d_in_currency.toFixed(2)}%
                     </td>
                   )}
