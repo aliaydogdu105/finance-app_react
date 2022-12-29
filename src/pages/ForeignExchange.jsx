@@ -44,7 +44,7 @@ const ForeignExchange = () => {
             type="text"
             id="simple-search"
             onChange={handleChange}
-            className="bg-gray-50 dark:bg-gray-300 border border-gray-300 text-gray-900 text-sm rounded-lg w-full pl-10 p-2.5 "
+            className="bg-gray-50 dark:bg-gray-300 border border-gray-300 text-gray-900 text-sm rounded-lg w-36 sm:w-full pl-10 p-2.5 "
             placeholder="Search"
             autoComplete="off"
             required
@@ -69,7 +69,7 @@ const ForeignExchange = () => {
           <tbody>
             {filteredMoney.map((key) => {
               return (
-                <tr className=" border-t " key={key.rates}>
+                <tr className=" border-t dark:bg-black" key={key.rates}>
                   <td className="flex items-center gap-8 p-4 "> USD / {key}</td>
                   <td className="py-2 border-l">{moneyData[key].toFixed(2)}</td>
                 </tr>

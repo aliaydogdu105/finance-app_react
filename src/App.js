@@ -36,7 +36,7 @@ function App() {
       <AppRouter />
       <button
         onClick={darkMode}
-        className=" top-6 right-2 sm:right-5 sm:top-4 fixed h-8 w-16 sm:h-12 sm:w-24 rounded-lg bg-black text-gray-100 dark:bg-slate-100 dark:text-gray-900 hover:scale-105 ease-out duration-150 "
+        className=" top-6 right-2 z-10 sm:right-5 sm:top-4 fixed h-8 w-16 sm:h-12 sm:w-24 rounded-lg bg-black text-gray-100 dark:bg-slate-100 dark:text-gray-900 hover:scale-105 ease-out duration-150 "
       >
         {theme}
       </button>
