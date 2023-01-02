@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Aside = () => {
   return (
     <aside
-      className=" sm:w-48 flex justify-center sm:flex-col sm:h-screen sm:fixed relative top-12 sm:top-auto sm:left-4"
+      className=" sm:w-48 flex justify-center sm:flex-col sm:h-screen sm:fixed relative top-12 sm:left-4"
       aria-label="Sidebar"
     >
       <div className="overflow-y-auto flex justify-center items-center py-10 bg-transparent">

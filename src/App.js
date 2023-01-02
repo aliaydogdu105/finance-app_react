@@ -1,7 +1,6 @@
 import "./App.css";
 import AppRouter from "./router/AppRouter";
 import React, { useEffect, useState } from "react";
-// import ThemeBtn from "./components/ThemeBtn";
 
 function App() {
   const [theme, setTheme] = useState(
